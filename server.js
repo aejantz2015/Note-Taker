@@ -1,6 +1,6 @@
 const express = require('express');
 const api = require ('./routes/index');
-const PORT = 5500;
+const PORT = 3001;
 
 const app = express();
 app.use(express.static('public'));
