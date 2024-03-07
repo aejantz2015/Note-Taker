@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { error } = require('console')
 const fs = require('fs');
 const path = require('path');
-// const uniquid = require('uniquid')
+const uniqid = require('uniqid')
 
 router.get('/notes', 
 (req, res) => {
@@ -11,22 +11,25 @@ router.get('/notes',
 
 router.get('/api/notes', 
 (req, res) => {
-    fs.readFile('../db/db.json', 'utf8', 
+    fs.readFile('./db/db.json', 
     (error, data) => {
-        res.send(data);
+        res.json(JSON.parse(data));
     })
 });
 
 router.post('/api/notes', 
 (req, res) => {
-    fs.readFile('../db/db.json', 'utf8', 
+    fs.readFile('./db/db.json', 'utf8', 
     (error, data) => {
-        const notes = JSON.parse(data)
-        const newNotes = req.body
-        // newNotes.id = uniqid()
+        if (error) {
+            throw new Error(error)
+        }
+        const notes = JSON.parse(data) || []
+        const newNotes = {title: req.body.title, text: req.body.text, id: uniqid()} 
+
 
         notes.push(newNotes)
-        fs.writeFile('../db/db.json', JSON.stringify(notes), 
+        fs.writeFile('./db/db.json', JSON.stringify(notes), 
         (error, data) => {
             res.json(newNotes)
         });
