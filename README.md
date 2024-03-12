@@ -20,8 +20,9 @@
   Link to GitHub Repository: [https://github.com/aejantz2015/Note-Taker]
   Link to deployed application on Heroku: []
 
-  ![Screenshot](./assets/Screenshot.png)
-  ![Screenshot](./assets/Screenshot1.png)
+  ![Screenshot](./public/assets/Screenshot.png)
+  ![Screenshot](./public/assets/Screenshot1.png)
+  ![Screenshot](./public/assets/Screenshot2.png)
 
   ## License
   MIT

@@ -36,6 +36,16 @@ router.post('/api/notes',
     });
 });
 
+router.delete('/api/notes/:id', (req, res) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        const notes = JSON.parse(data);
+        const noteUpdated = notes.filter(note => note.id !== req.params.id)
+    fs.writeFile('./db/db.json', JSON.stringify(noteUpdated), (err) => {
+        res.json(noteUpdated)
+})
+})
+})
+
 router.get("*", 
 (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
