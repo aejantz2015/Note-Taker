@@ -18,7 +18,7 @@
   ## Usage
   
   Link to GitHub Repository: [https://github.com/aejantz2015/Note-Taker]
-  Link to deployed application on Heroku: []
+  Link to deployed application on Heroku: [https://sleepy-chamber-63946-07f715441d32.herokuapp.com/]
 
   ![Screenshot](./public/assets/Screenshot.png)
   ![Screenshot](./public/assets/Screenshot1.png)
